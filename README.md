@@ -64,3 +64,8 @@ Strapi Graphql playground:
 
 ```localhost:1337/graphql```
 
+
+
+## Steps to import strapi data
+
+```docker compose run --rm strapi yarn strapi import -f sample-project.tar.gz```
