@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_our_chefs",
+  "info": {
+    "displayName": "Our-Chefs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "chefHeading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

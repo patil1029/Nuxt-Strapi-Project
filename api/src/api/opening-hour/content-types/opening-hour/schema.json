@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "opening_hours",
+  "info": {
+    "singularName": "opening-hour",
+    "pluralName": "opening-hours",
+    "displayName": "OpeningHour",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "workingDays": {
+      "type": "string",
+      "required": true,
+      "default": "Tuesday - Sunday"
+    },
+    "openTimings": {
+      "type": "component",
+      "repeatable": false,
+      "component": "working-hour.open-time"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

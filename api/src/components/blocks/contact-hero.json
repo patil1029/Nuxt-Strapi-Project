@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_contact_heroes",
+  "info": {
+    "displayName": "contactHero"
+  },
+  "options": {},
+  "attributes": {
+    "contactHeroImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "contactHeroHeading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

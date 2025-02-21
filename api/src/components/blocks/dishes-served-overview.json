@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_dishes_served_overviews",
+  "info": {
+    "displayName": "DishesServedOverview"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

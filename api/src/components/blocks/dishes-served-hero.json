@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_dishes_served_heroes",
+  "info": {
+    "displayName": "DishesServedHero"
+  },
+  "options": {},
+  "attributes": {
+    "heroImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "heroHeading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

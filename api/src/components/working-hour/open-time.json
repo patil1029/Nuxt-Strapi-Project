@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_working_hour_open_times",
+  "info": {
+    "displayName": "OpenTime",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "openHour": {
+      "type": "time",
+      "default": "00:12",
+      "required": true
+    },
+    "closingHour": {
+      "type": "time",
+      "default": "10:45",
+      "required": true
+    }
+  }
+}

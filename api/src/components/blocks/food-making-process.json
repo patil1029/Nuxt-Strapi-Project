@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_food_making_processes",
+  "info": {
+    "displayName": "FoodMakingProcess",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "process": {
+      "displayName": "processofmakingfood",
+      "type": "component",
+      "repeatable": true,
+      "component": "processofmakingfood.processofmakingfood",
+      "required": false
+    }
+  }
+}

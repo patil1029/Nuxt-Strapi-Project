@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blocks_usps",
+  "info": {
+    "displayName": "USP",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sectionHeading": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

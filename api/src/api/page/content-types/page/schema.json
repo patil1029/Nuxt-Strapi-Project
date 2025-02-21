@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.rich-text",
+        "blocks.single-image",
+        "blocks.usp",
+        "blocks.food-making-process",
+        "blocks.dishes-served-hero",
+        "blocks.dishes-served-overview",
+        "blocks.our-chefs",
+        "blocks.contact-block",
+        "blocks.contact-hero"
+      ]
+    }
+  }
+}
