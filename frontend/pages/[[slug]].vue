@@ -1,53 +1,53 @@
 <template>
   <div>
-    <template v-if="pagesData?.pages?.data && pagesData?.pages?.data.length < 1"
-      ><h1>Page not found</h1></template
-    >
+    <template v-if="checkedIfPagesExist"><h1>Page not found</h1></template>
     <template v-else>
       <div
-        v-for="(block, index) in pagesData?.pages.data[0].attributes?.blocks"
+        v-for="(block, index) in pagesData.pages.data[0].attributes?.blocks"
         :key="'block-' + index"
       >
-        <template v-if="block?.__typename === 'ComponentBlocksRichText'">
-          <BlockRichText :data="block" />
-        </template>
-        <template v-if="block?.__typename === 'ComponentBlocksSingleImage'">
-          <BlockSingleImage
-            :data="block"
-            :class="route.params.slug ? route.params.slug : 'home'"
-          />
-        </template>
-        <template v-if="block?.__typename === 'ComponentBlocksUsp'">
-          <BlockUspOverview :data="block" />
-        </template>
-        <template
+        <BlockRichText
+          v-if="block?.__typename === 'ComponentBlocksRichText'"
+          :data="block"
+        />
+        <BlockSingleImage
+          v-if="block?.__typename === 'ComponentBlocksSingleImage'"
+          :data="block"
+          :class="route.params.slug ? route.params.slug : 'home'"
+        />
+        <BlockUspOverview
+          v-if="block?.__typename === 'ComponentBlocksUsp'"
+          :data="block"
+        />
+        <BlockFoodMakingProcess
           v-if="block?.__typename === 'ComponentBlocksFoodMakingProcess'"
-        >
-          <BlockFoodMakingProcess :data="block" />
-        </template>
-        <template
+          :data="block"
+        />
+
+        <BlockDishesHeroHeader
           v-if="block?.__typename === 'ComponentBlocksDishesServedHero'"
-        >
-          <BlockDishesHeroHeader :data="block" />
-        </template>
-        <template
+          :data="block"
+        />
+
+        <BlockDishesOverview
           v-if="block?.__typename === 'ComponentBlocksDishesServedOverview'"
-        >
-          <BlockDishesOverview :heading="block.heading" />
-        </template>
-        <template v-if="block?.__typename === 'ComponentBlocksOurChefs'">
-          <BlockOurChefsOverview :heading="block.chefHeading" />
-        </template>
-        <template v-if="block?.__typename === 'ComponentBlocksContactHero'">
-          <BlockContactHero :data="block" />
-        </template>
-        <template v-if="block?.__typename === 'ComponentBlocksContactBlock'">
-          <BlockContactBlock :data="block" />
-        </template>
-        <!-- <template v-if="block?.__typename === 'NAME_OF_COMPONENT'">
-          Repeat for all blocks
-          {{ block }}
-        </template> -->
+          :heading="block.heading"
+        />
+
+        <BlockOurChefsOverview
+          v-if="block?.__typename === 'ComponentBlocksOurChefs'"
+          :heading="block.chefHeading"
+        />
+
+        <BlockContactHero
+          v-if="block?.__typename === 'ComponentBlocksContactHero'"
+          :data="block"
+        />
+
+        <BlockContactBlock
+          v-if="block?.__typename === 'ComponentBlocksContactBlock'"
+          :data="block"
+        />
       </div>
     </template>
   </div>
@@ -68,5 +68,9 @@ const filters: PageFiltersInput = {
 const { data: pagesData, error: pagesError } = await useAsyncQuery<resPages>(
   getPages,
   { filters }
+);
+
+const checkedIfPagesExist = computed(
+  () => pagesData.value.pages.data && pagesData.value.pages.data.length < 1
 );
 </script>

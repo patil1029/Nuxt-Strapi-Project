@@ -12,13 +12,3 @@ const props = defineProps({
   },
 });
 </script>
-<style lang="sass">
-.nav
-  font-size: 20px
-  font-weight: 500
-  text-decoration: none
-  color: $black
-
-.router-link-active
-  color: $white
-</style>
